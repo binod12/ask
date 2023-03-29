@@ -23,6 +23,7 @@ internal class Program
             var content = new StringContent("{\"model\": \"text-davinci-003\",\"prompt\": \"" + args[0] + "\",\"max_tokens\": 100,\"temperature\": 0}",
             Encoding.UTF8, "application/json");
 
+
             HttpResponseMessage response = await client.PostAsync("https://api.openai.com/v1/completions", content);
 
             string responseString = await response.Content.ReadAsStringAsync();
